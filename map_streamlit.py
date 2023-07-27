@@ -47,34 +47,21 @@ def main():
     print(end_date)
 
     selected_date_range = df[(df['확진일'] >= start_date) & (df['확진일'] <= end_date)]
-    m = folium.Map(location=[37, 127], zoom_start=6.5, min_zoom=5, max_zoom=12)
-
-    for i, row in selected_date_range.iterrows():
-
-        folium.Marker(location=[row['lat'], row['lon']]).add_to(m)
-
-    folium_static(m, width=700, height=650)
+    print(selected_date_range)
+    # m = folium.Map(location=[37, 127], zoom_start=6.5, min_zoom=5, max_zoom=12)
+    st.map(selected_date_range, zoom=6.5)
 
 
+    # for i, row in selected_date_range.iterrows():
+
+        # folium.Marker(location=[row['lat'], row['lon']]).add_to(m)
+
+    # folium_static(m, width=700, height=650)
 
 
 
-    # if start_date and end_date in date_list:
-    #     df1 = df[df['확진일'] == selected_date_str][['lat', 'lon']]
-    #
-    #     # df2 = df[df['확진일'] == selected_date_str][['address']]
-    #
-    #     m = folium.Map(location=[37, 127], zoom_start=6.5, min_zoom=5, max_zoom=12)
-    #     for i, row in df1.iterrows():
-    #
-    #         folium.Marker(location=[row['lat'], row['lon']]).add_to(m)
-    #
-    #     folium_static(m, width=700, height=680)
-    #
-    #
-    # else:
-    #     m = folium.Map(location=[37, 127], zoom_start=6.5, min_zoom=5, max_zoom=12)
-    #     folium_static(m, width=700, height=680)
+
+
 
 
 
