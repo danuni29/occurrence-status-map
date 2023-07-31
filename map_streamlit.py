@@ -35,21 +35,35 @@ def main():
                             max_value=end_dt, format="YY/MM/DD")
 
 
-    print(choose_date)
+    # print(choose_date)
 
     start_date = choose_date[0].strftime("%Y-%m-%d")
     end_date = choose_date[1].strftime("%Y-%m-%d")
 
+    base_position = [37.5073423, 127.0572734]
 
     st.write("Selected Start Date: ", start_date)
     st.write("Selected End Date: ", end_date)
-    print(start_date)
-    print(end_date)
+    # print(start_date)
+    # print(end_date)
 
     selected_date_range = df[(df['확진일'] >= start_date) & (df['확진일'] <= end_date)]
-    print(selected_date_range)
+    # print(selected_date_range)
     # m = folium.Map(location=[37, 127], zoom_start=6.5, min_zoom=5, max_zoom=12)
-    st.map(selected_date_range, zoom=6.5)
+
+    st.markdown(
+        """
+        <style>
+        #map {
+            height: 800px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+    st.map(selected_date_range, zoom=7)
 
 
     # for i, row in selected_date_range.iterrows():
