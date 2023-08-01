@@ -1,8 +1,8 @@
 import pandas as pd
 
 def main():
-    df1 = pd.read_csv('input/test.csv', encoding='utf-8-sig')
-    df2 = pd.read_csv('input/위경도_추가.csv', encoding='euc-kr')
+    df1 = pd.read_csv('input/total_data.csv', encoding='utf-8-sig')
+    df2 = pd.read_csv('input/위경도_예외_추가.csv', encoding='euc-kr')
     df2 = df2.drop_duplicates(subset=['address'])
     df2 = df2[['address', 'lat','lng']]
 

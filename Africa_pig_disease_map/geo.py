@@ -106,7 +106,7 @@ def main():
     # df['lat'] = df['address'].apply(geocoding)['lat']
     print(df)
 
-    df.to_csv("test.csv", index = False, encoding='utf-8-sig')
+    df.to_csv("total_data.csv", index = False, encoding='utf-8-sig')
 
 
 if __name__ == '__main__':
