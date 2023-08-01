@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import datetime
 
 def main():
-    df = pd.read_csv('result_final.csv',
+    df = pd.read_csv('output/result_final.csv',
                      usecols=['확진일','address', 'lat', 'lng'])
 
     date_list = []
