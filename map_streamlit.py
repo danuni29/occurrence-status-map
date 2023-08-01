@@ -1,9 +1,6 @@
 import streamlit as st
 import pandas as pd
 from datetime import datetime
-import folium
-from streamlit_folium import folium_static
-
 
 def main():
     df = pd.read_csv('result_final.csv',
@@ -40,8 +37,6 @@ def main():
     start_date = choose_date[0].strftime("%Y-%m-%d")
     end_date = choose_date[1].strftime("%Y-%m-%d")
 
-    base_position = [37.5073423, 127.0572734]
-
     st.write("Selected Start Date: ", start_date)
     st.write("Selected End Date: ", end_date)
     # print(start_date)
@@ -51,35 +46,8 @@ def main():
     # print(selected_date_range)
     # m = folium.Map(location=[37, 127], zoom_start=6.5, min_zoom=5, max_zoom=12)
 
-    st.markdown(
-        """
-        <style>
-        #map {
-            height: 800px;
-        }
-        </style>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
-    st.map(selected_date_range, zoom=7)
-
-
-    # for i, row in selected_date_range.iterrows():
-
-        # folium.Marker(location=[row['lat'], row['lon']]).add_to(m)
-
-    # folium_static(m, width=700, height=650)
-
-
-
-
-
-
-
-
-
+    st.map(selected_date_range, zoom=7, color="#ff333333")
+    # st.map(df_geo, zoom=7)
 
 
 
